@@ -1,0 +1,66 @@
+
+<head>
+       <title>Home - Pothole</title>
+ <link rel="icon" type="image/png" href=""/>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.2.2/dist/web3.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+      <script src="static/index/app.js"></script>
+    <script src="static/index/index.js"></script>
+
+
+    <link rel="stylesheet" type="text/css" href="static/style.css" />
+{% extends "layout.html" %}
+
+
+
+
+{% block content %}
+                <div class="container-fluid">
+                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
+                        <h3 class="text-dark mb-0">Dashboard</h3><a class="btn btn-secondary btn-sm d-none d-sm-inline-block disabled" role="button" id="cert-button"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Generate Certificate</a>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-md-6 col-xl-3 mb-4">
+                            <div class="card shadow border-start-success py-2">
+                                <div class="card-body">
+                                    <div class="row align-items-center no-gutters">
+                                        <div class="col me-2">
+                                            <div class="text-uppercase text-success fw-bold text-xs mb-1"><span>Balance</span></div>
+                                            <div class="text-dark fw-bold h5 mb-0" ><span id="balance">SST (Please switch to Rinkeby Testnet and use registered wallet)</span></div>
+                                        </div>
+                                        <div class="col-auto"><i class="fas fa-dollar-sign fa-2x text-gray-300"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                     <div class="row">
+                        <div class="col-lg-7 col-xl-8">
+                            <div class="card shadow mb-4">
+                                <div class="card-header d-flex justify-content-between align-items-center">
+                                    <h6 class="text-primary fw-bold m-0">Potholes Overview</h6>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                     </div>
+
+       <div id="map"></div>
+                <br/>
+
+
+
+<script src="static/index/app.js">
+
+</script>
+                    <script async
+   src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgiV4eatDsP8Zgmofg7AgzQOhxxfPIgjA&callback=initMap">
+
+</script>
+{% endblock %}

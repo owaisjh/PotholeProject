@@ -1,0 +1,17 @@
+
+#map {
+  height: 60%;
+        width: 66.2%;
+    margin-left: 0%;
+    margin-top: -1.5%;
+
+}
+
+/* Optional: Makes the sample page fill the window. */
+html,
+body {
+  height: 50%;
+
+  margin: 0;
+  padding: 0;
+}

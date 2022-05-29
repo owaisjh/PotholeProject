@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Login - Potholes</title>
+    <link rel="stylesheet" href="static/assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
+    <link rel="stylesheet" href="static/assets/fonts/fontawesome-all.min.css">
+    <link rel="stylesheet" href="static/assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="static/assets/fonts/fontawesome5-overrides.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/web3@1.2.2/dist/web3.min.js"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="static/login/app.js"></script>
+
+    <style>
+    .metamask_icon{
+        width:8%;
+        height:8%;
+    }
+      .register_icon{
+        width:8%;
+        height:8%;
+          position: relative;
+        left: -3.45%;
+    }
+    </style>
+</head>
+
+<body class="bg-gradient-warning">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-9 col-lg-12 col-xl-10">
+                <div class="card shadow-lg o-hidden border-0 my-5">
+                    <div class="card-body p-0">
+                        <div class="row">
+                            <div class="col-lg-6 d-none d-lg-flex">
+                                <div class="flex-grow-1 bg-login-image" style="background-image: url(&quot;static/assets/img/road_repair/image1.jpeg&quot;);"></div>
+                            </div>
+                            <div class="col-lg-6">
+                                <div class="p-5">
+                                    <div class="text-center">
+
+
+                                        <div class="alert alert-danger alert-dismissible fade show" id="login_fail" style="display: none">
+                                            <strong>Error!</strong> Wallet not registered
+                                            <button type="button" class="btn-close" onclick="close_alert()"></button>
+                                        </div>
+                                        <h3 class="text-dark mb-4">Welcome!</h3>
+                                    </div>
+
+
+
+                                       <div class="d-sm-flex justify-content-between align-items-center mb-4">
+
+                                           <h5 class="text-dark mb-0">To sign in make sure you have the registered metamask wallet </h5>
+
+
+
+                                       </div>
+
+                                        <div class="mb-3">
+
+
+                                            <hr>
+                                        </div><button class="btn btn-primary d-block btn-user w-100" type="submit" onclick="getWalletNumber()"><img class="metamask_icon" src="static/assets/img/metamask_icon.png"/>    Login with MetaMask</button>
+                                        <hr><a class="btn btn-primary d-block btn-google btn-user w-100 mb-2" role="button" href="register"><img class="register_icon" src="static/assets/img/register.png"/>Create an Account</a>
+                                        <hr>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="static/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/bs-init.js"></script>
+    <script src="static/assets/js/theme.js"></script>
+</body>
+
+</html>
