@@ -17,7 +17,7 @@ from sklearn.cluster import DBSCAN
 import geopy.distance
 
 
-client = pymongo.MongoClient("mongodb+srv://admin:Password@data.q5k3c.mongodb.net/Data?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongo url")
 db = client.user_login_system
 pothole_db = client.pothole_data
 

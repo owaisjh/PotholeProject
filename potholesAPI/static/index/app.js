@@ -1,6 +1,6 @@
 // const xhr = new XMLHttpRequest()
 window.web3 = new Web3(ethereum);
-
+const xhr = new XMLHttpRequest()
 const abi = [
 	{
 		"constant": true,
@@ -444,7 +444,7 @@ window.addEventListener('load', function () {
 								document.getElementById("cert-button").innerHTML = "View Certificate"
 								document.getElementById("cert-button").className= "btn btn-primary btn-sm d-none d-sm-inline-block enabled"
 							   reso=res;
-							   document.getElementById("cert-button").onclick= view_cert
+							   document.getElementById("cert-button").onclick= generate_cert
 						   }
 						   else if (res["tokens"] >= 200 )
 						   {
@@ -457,7 +457,7 @@ window.addEventListener('load', function () {
 
 					  }
 
-
+					load_map()
                   }
               });
           })
@@ -477,6 +477,12 @@ function view_cert()
 	var url= "https://ipfs.infura.io/ipfs/" + reso["cert-path"]
 	window.location.replace(url);
 }
+
+function delay(milliseconds){
+    return new Promise(resolve => {
+        setTimeout(resolve, milliseconds);
+    });
+}
 function generate_cert()
 {
 					var tosend= {
@@ -488,12 +494,20 @@ function generate_cert()
                       xhr.setRequestHeader("Content-type", "application/json");
                       xhr.send(myJSON);
                       var res1;
-                      res1 = JSON.parse(xhr.responseText)
-						console.log(res1)
+                      //res1 = JSON.parse(xhr.responseText)
+					//console.log(res1)
+
+					delay(1500);
+
+					  res1_code = xhr.status
+			if (res1_code === 201)
+					showCert(myJSON);
 
 
-
-					xhr.open("POST", "/user/fetchCert", false);
+}
+function showCert(myJSON)
+{
+	xhr.open("POST", "/user/fetchCert", false);
                       xhr.setRequestHeader("Content-type", "application/json");
                       xhr.send(myJSON);
 					  var res2;
@@ -501,5 +515,66 @@ function generate_cert()
 					var url= "https://ipfs.infura.io/ipfs/" + res2
 					window.location.replace(url);
 
+}
+
+function load_map() {
+	let map;
+
+	var data;
+
+//open a get request with the remote server URL
+	xhr.open("GET", "/potholes_coordinates")
+//send the Http request
+	xhr.send()
+
+
+	xhr.onload = function () {
+		if (xhr.status === 200) {
+			//parse JSON data
+
+			data = JSON.parse(xhr.responseText)
+			// console.log(data)
+
+			initMap()
+
+		} else if (xhr.status === 404) {
+			console.log("No records found")
+		}
+	}
+
+//triggered when a network-level error occurs with the request
+	xhr.onerror = function () {
+		console.log("Network error occurred")
+
+
+	}
+
+
+	function initMap() {
+		console.log(data)
+
+
+		map = new google.maps.Map(document.getElementById("map"), {
+			center: {lat: 19.0760, lng: 72.8777},
+			zoom: 12,
+		});
+
+
+		var i = 0;
+
+
+		for (i = 0; i < data.length; i++) {
+
+
+			// console.log(data[i][1]["coordinates"][1])
+			new google.maps.Marker({
+				position: {lat: data[i][1]["coordinates"][0], lng: data[i][1]["coordinates"][1]},
+				map,
+			});
+
+		}
+
+
+	}
 
 }
