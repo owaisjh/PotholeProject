@@ -52,172 +52,172 @@ class _ReportPotholeState extends State<ReportPothole> {
               children: [
                 GestureDetector(
                   onTap: () async {
-                    // final photo =
-                    //     await _picker.pickImage(source: ImageSource.camera);
+                    final photo =
+                        await _picker.pickImage(source: ImageSource.camera);
 
-                    // if (photo != null) {
-                    //   Navigator.push(
-                    //       context,
-                    //       MaterialPageRoute(
-                    //           builder: (context) => Loading(photo.path)));
-                    // }
-                    showModalBottomSheet(
-                        context: context,
-                        builder: (context) {
-                          return Container(
-                              height: 150,
-                              child: Column(children: <Widget>[
-                                ListTile(
-                                  onTap: () async {
-                                    // close the modal
-                                    //Navigator.of(context).pop();
-                                    // show the camera
-                                    final photo = await _picker.pickImage(
-                                        source: ImageSource.camera);
+                    if (photo != null) {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => Loading(photo.path)));
+                    }
+                    // showModalBottomSheet(
+                    //     context: context,
+                    //     builder: (context) {
+                    //       return Container(
+                    //           height: 150,
+                    //           child: Column(children: <Widget>[
+                    //             ListTile(
+                    //               onTap: () async {
+                    //                 // close the modal
+                    //                 //Navigator.of(context).pop();
+                    //                 // show the camera
+                    //                 final photo = await _picker.pickImage(
+                    //                     source: ImageSource.camera);
 
-                                    if (photo != null) {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Loading(photo.path)));
-                                    }
+                    //                 if (photo != null) {
+                    //                   Navigator.push(
+                    //                       context,
+                    //                       MaterialPageRoute(
+                    //                           builder: (context) =>
+                    //                               Loading(photo.path)));
+                    //                 }
 
-                                    // if (photo != null) {
-                                    //   print('hello');
-                                    //   final bytes =
-                                    //       File(photo.path).readAsBytesSync();
-                                    //   String base64Image = base64Encode(bytes);
-                                    //   var response =
-                                    //       await predictPothole(base64Image);
-                                    //   //print(response);
-                                    //   var jsonData = json.decode(response.body);
-                                    //   var a = 1;
-                                    //   var hash;
-                                    //   if (a == 1 ||
-                                    //       jsonData["classLabel"] == "Pothole") {
-                                    //     print('xyz');
-                                    //     hash = jsonData['hash'];
-                                    //     var x = await Geolocator()
-                                    //         .placemarkFromCoordinates(
-                                    //             position.latitude,
-                                    //             position.longitude);
-                                    //     var response = await reportPothole(
-                                    //         position.latitude.toString(),
-                                    //         position.longitude.toString(),
-                                    //         x[0].thoroughfare,
-                                    //         x[0].locality,
-                                    //         x[0].subLocality,
-                                    //         x[0].postalCode,
-                                    //         hash);
-                                    //     print('response');
-                                    //     print(response.body);
-                                    //     // print(x[0].postalCode);
-                                    //     // print(x[0].locality);
-                                    //     // //print(x[0].subAdministrativeArea);
-                                    //     // print(x[0].subLocality);
-                                    //     // print(x[0].subThoroughfare);
-                                    //   }
-                                    //   Navigator.push(
-                                    //       context,
-                                    //       MaterialPageRoute(
-                                    //           builder: (context) =>
-                                    //               RegisteredPothole(
-                                    //                 image:
-                                    //                     "https://ipfs.infura.io/ipfs/$hash",
-                                    //                 city: 'Mumbai',
-                                    //                 locality:
-                                    //                     'Jogeshwari (East)',
-                                    //                 road: 'XYZ Road',
-                                    //                 postCode: '400060',
-                                    //                 statusText: 'Not Fixed',
-                                    //                 statusColor: Colors.red,
-                                    //                 latitude: position.latitude,
-                                    //                 longitude:
-                                    //                     position.longitude,
-                                    //               )));
-                                    // }
-                                    print('here');
-                                  },
-                                  leading: Icon(
-                                    Icons.photo_camera,
-                                    color: Colors.blue,
-                                  ),
-                                  title: Text("Take a picture"),
-                                ),
-                                ListTile(
-                                  onTap: () async {
-                                    // close the modal
-                                    //Navigator.of(context).pop();
-                                    // show the camera
-                                    final photo = await _picker.pickImage(
-                                        source: ImageSource.gallery);
-                                    if (photo != null) {
-                                      Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                              builder: (context) =>
-                                                  Loading(photo.path)));
-                                    }
+                    //                 // if (photo != null) {
+                    //                 //   print('hello');
+                    //                 //   final bytes =
+                    //                 //       File(photo.path).readAsBytesSync();
+                    //                 //   String base64Image = base64Encode(bytes);
+                    //                 //   var response =
+                    //                 //       await predictPothole(base64Image);
+                    //                 //   //print(response);
+                    //                 //   var jsonData = json.decode(response.body);
+                    //                 //   var a = 1;
+                    //                 //   var hash;
+                    //                 //   if (a == 1 ||
+                    //                 //       jsonData["classLabel"] == "Pothole") {
+                    //                 //     print('xyz');
+                    //                 //     hash = jsonData['hash'];
+                    //                 //     var x = await Geolocator()
+                    //                 //         .placemarkFromCoordinates(
+                    //                 //             position.latitude,
+                    //                 //             position.longitude);
+                    //                 //     var response = await reportPothole(
+                    //                 //         position.latitude.toString(),
+                    //                 //         position.longitude.toString(),
+                    //                 //         x[0].thoroughfare,
+                    //                 //         x[0].locality,
+                    //                 //         x[0].subLocality,
+                    //                 //         x[0].postalCode,
+                    //                 //         hash);
+                    //                 //     print('response');
+                    //                 //     print(response.body);
+                    //                 //     // print(x[0].postalCode);
+                    //                 //     // print(x[0].locality);
+                    //                 //     // //print(x[0].subAdministrativeArea);
+                    //                 //     // print(x[0].subLocality);
+                    //                 //     // print(x[0].subThoroughfare);
+                    //                 //   }
+                    //                 //   Navigator.push(
+                    //                 //       context,
+                    //                 //       MaterialPageRoute(
+                    //                 //           builder: (context) =>
+                    //                 //               RegisteredPothole(
+                    //                 //                 image:
+                    //                 //                     "https://ipfs.infura.io/ipfs/$hash",
+                    //                 //                 city: 'Mumbai',
+                    //                 //                 locality:
+                    //                 //                     'Jogeshwari (East)',
+                    //                 //                 road: 'XYZ Road',
+                    //                 //                 postCode: '400060',
+                    //                 //                 statusText: 'Not Fixed',
+                    //                 //                 statusColor: Colors.red,
+                    //                 //                 latitude: position.latitude,
+                    //                 //                 longitude:
+                    //                 //                     position.longitude,
+                    //                 //               )));
+                    //                 // }
+                    //                 print('here');
+                    //               },
+                    //               leading: Icon(
+                    //                 Icons.photo_camera,
+                    //                 color: Colors.blue,
+                    //               ),
+                    //               title: Text("Take a picture"),
+                    //             ),
+                    //             ListTile(
+                    //               onTap: () async {
+                    //                 // close the modal
+                    //                 //Navigator.of(context).pop();
+                    //                 // show the camera
+                    //                 final photo = await _picker.pickImage(
+                    //                     source: ImageSource.gallery);
+                    //                 if (photo != null) {
+                    //                   Navigator.push(
+                    //                       context,
+                    //                       MaterialPageRoute(
+                    //                           builder: (context) =>
+                    //                               Loading(photo.path)));
+                    //                 }
 
-                                    // if (photo != null) {
-                                    //   final bytes =
-                                    //       File(photo.path).readAsBytesSync();
-                                    //   String base64Image = base64Encode(bytes);
-                                    //   var response =
-                                    //       await predictPothole(base64Image);
-                                    //   print(response);
-                                    //   var jsonData = json.decode(response.body);
-                                    //   var a = 1;
-                                    //   var hash;
-                                    //   if (a == 1 ||
-                                    //       jsonData["classLabel"] == "Pothole") {
-                                    //     print('xyz');
-                                    //     hash = jsonData['Hash'];
-                                    //     var x = await Geolocator()
-                                    //         .placemarkFromCoordinates(
-                                    //             position.latitude,
-                                    //             position.longitude);
-                                    //     var response = await reportPothole(
-                                    //         position.latitude.toString(),
-                                    //         position.longitude.toString(),
-                                    //         x[0].thoroughfare,
-                                    //         x[0].locality,
-                                    //         x[0].subLocality,
-                                    //         x[0].postalCode,
-                                    //         hash);
-                                    //     print(response.body);
-                                    //     Navigator.push(
-                                    //         context,
-                                    //         MaterialPageRoute(
-                                    //             builder: (context) =>
-                                    //                 RegisteredPothole(
-                                    //                   image:
-                                    //                       "https://ipfs.infura.io/ipfs/$hash",
-                                    //                   city: 'Mumbai',
-                                    //                   locality:
-                                    //                       'Jogeshwari (East)',
-                                    //                   road: 'XYZ Road',
-                                    //                   postCode: '400060',
-                                    //                   statusText: 'Not Fixed',
-                                    //                   statusColor: Colors.red,
-                                    //                   latitude:
-                                    //                       position.latitude,
-                                    //                   longitude:
-                                    //                       position.longitude,
-                                    //                 )));
-                                    //   }
-                                    // }
-                                    // ;
-                                  },
-                                  leading: Icon(
-                                    Icons.image_search,
-                                    color: Colors.blue,
-                                  ),
-                                  title: Text("Choose a picture"),
-                                )
-                              ]));
-                        });
+                    //                 // if (photo != null) {
+                    //                 //   final bytes =
+                    //                 //       File(photo.path).readAsBytesSync();
+                    //                 //   String base64Image = base64Encode(bytes);
+                    //                 //   var response =
+                    //                 //       await predictPothole(base64Image);
+                    //                 //   print(response);
+                    //                 //   var jsonData = json.decode(response.body);
+                    //                 //   var a = 1;
+                    //                 //   var hash;
+                    //                 //   if (a == 1 ||
+                    //                 //       jsonData["classLabel"] == "Pothole") {
+                    //                 //     print('xyz');
+                    //                 //     hash = jsonData['Hash'];
+                    //                 //     var x = await Geolocator()
+                    //                 //         .placemarkFromCoordinates(
+                    //                 //             position.latitude,
+                    //                 //             position.longitude);
+                    //                 //     var response = await reportPothole(
+                    //                 //         position.latitude.toString(),
+                    //                 //         position.longitude.toString(),
+                    //                 //         x[0].thoroughfare,
+                    //                 //         x[0].locality,
+                    //                 //         x[0].subLocality,
+                    //                 //         x[0].postalCode,
+                    //                 //         hash);
+                    //                 //     print(response.body);
+                    //                 //     Navigator.push(
+                    //                 //         context,
+                    //                 //         MaterialPageRoute(
+                    //                 //             builder: (context) =>
+                    //                 //                 RegisteredPothole(
+                    //                 //                   image:
+                    //                 //                       "https://ipfs.infura.io/ipfs/$hash",
+                    //                 //                   city: 'Mumbai',
+                    //                 //                   locality:
+                    //                 //                       'Jogeshwari (East)',
+                    //                 //                   road: 'XYZ Road',
+                    //                 //                   postCode: '400060',
+                    //                 //                   statusText: 'Not Fixed',
+                    //                 //                   statusColor: Colors.red,
+                    //                 //                   latitude:
+                    //                 //                       position.latitude,
+                    //                 //                   longitude:
+                    //                 //                       position.longitude,
+                    //                 //                 )));
+                    //                 //   }
+                    //                 // }
+                    //                 // ;
+                    //               },
+                    //               leading: Icon(
+                    //                 Icons.image_search,
+                    //                 color: Colors.blue,
+                    //               ),
+                    //               title: Text("Choose a picture"),
+                    //             )
+                    //           ]));
+                    //     });
                   },
                   child: Container(
                     height: 150,
